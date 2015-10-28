@@ -17,7 +17,8 @@ alias picocom1="picocom --nolock --baud 115200 /dev/ttyUSB1"
 alias picocom2="picocom --nolock --baud 115200 /dev/ttyUSB2"
 alias cls="echo -ne '\033c'"
 alias cur_track="qdbus org.mpris.clementine /Player "org.freedesktop.MediaPlayer.GetMetadata""
-alias reboot="echo non pas ici"
+alias reboot="echo no, not here!"
+alias -g G='| grep'
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
