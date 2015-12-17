@@ -21,6 +21,7 @@ alias reboot="echo no, not here!"
 alias -g G='| grep'
 alias aptitude='nocorrect aptitude' # no spelling correction on aptitude
 alias j='jobs'
+alias tee="tee -a"
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
@@ -29,5 +30,5 @@ setopt RM_STAR_WAIT
 function ff() { find . -type f -iname \*${*}\* -ls ; }
 
 # generate a dated .bak from file
-function bak() { cp $1 $1_`date +%Y-%m-%d_%H:%M:%S`.bak ; }
+function bak() { cp $1 $1_`date +%Y-%m-%d_%H-%M-%S`.bak ; }
 
