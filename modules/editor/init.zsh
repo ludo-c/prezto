@@ -305,6 +305,15 @@ for keymap in 'emacs' 'viins'; do
 
   # Insert 'sudo ' at the beginning of the line.
   bindkey -M "$keymap" "$key_info[Control]X$key_info[Control]S" prepend-sudo
+
+  # run-help for vi-mode
+  bindkey "\eh" run-help
+
+  # accept-and-hold for vi-mode
+  bindkey "\ea" accept-and-hold
+
+  # quote line for vi-mode
+  bindkey "\e'" quote-line
 done
 
 # Do not expand .... to ../.. during incremental search.
