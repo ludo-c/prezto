@@ -429,6 +429,15 @@ for keymap in 'emacs' 'viins'; do
 
   # control-space expands all aliases, including global
   bindkey -M "$keymap" "$key_info[Control] " glob-alias
+
+  # run-help for vi-mode
+  bindkey "\eh" run-help
+
+  # accept-and-hold for vi-mode
+  bindkey "\ea" accept-and-hold
+
+  # quote line for vi-mode
+  bindkey "\e'" quote-line
 done
 
 # Delete key deletes character in vimcmd cmd mode instead of weird default functionality
