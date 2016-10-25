@@ -11,7 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-alias genbox="sudo ~/genbox/bin/genbox-ng -v"
+alias genbox="sudo /media/lchopin/hdd/genbox/bin/genbox-ng -v"
+alias chroot-android="sudo mount --bind /tftpboot /home/lchopin/opt/ubundroid/remaster-root/tftpboot; sudo mount --bind /media/lchopin/hdd /home/lchopin/opt/ubundroid/remaster-root/media/; export HOME=/root/; sudo uck-remaster-chroot-rootfs /home/lchopin/opt/ubundroid/"
 alias picocom0="picocom --nolock --baud 115200 /dev/ttyUSB0"
 alias picocom1="picocom --nolock --baud 115200 /dev/ttyUSB1"
 alias picocom2="picocom --nolock --baud 115200 /dev/ttyUSB2"
