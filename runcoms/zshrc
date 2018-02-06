@@ -11,8 +11,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-alias genbox="sudo /media/lchopin/hdd/genbox/bin/genbox-ng -v"
-alias chroot-android="sudo mount --bind /tftpboot /home/lchopin/opt/ubundroid/remaster-root/tftpboot; sudo mount --bind /media/lchopin/hdd /home/lchopin/opt/ubundroid/remaster-root/media/; export HOME=/root/; sudo uck-remaster-chroot-rootfs /home/lchopin/opt/ubundroid/"
+#alias genbox="echo sudo /media/lchopin/hdd/genbox/bin/genbox-ng -v"
+alias genbox="echo sudo /home/lchopin/genbox/bin/genbox-ng -v"
+alias chroot-android="echo 'sudo mount --bind /tftpboot /home/lchopin/opt/ubundroid/remaster-root/tftpboot; sudo mount --bind /media/lchopin/hdd /home/lchopin/opt/ubundroid/remaster-root/media/; export HOME=/root/; sudo uck-remaster-chroot-rootfs /home/lchopin/opt/ubundroid/'"
 alias picocom0="picocom --nolock --baud 115200 /dev/ttyUSB0"
 alias picocom1="picocom --nolock --baud 115200 /dev/ttyUSB1"
 alias picocom2="picocom --nolock --baud 115200 /dev/ttyUSB2"
@@ -26,6 +27,8 @@ alias tee="tee -a"
 alias tm="tmux attach || tmux new"
 alias ag="ag -S" # Smart search
 alias vi="vim"
+# https://coderwall.com/p/lyrjsq/extract-your-external-ip-using-command-line-tools
+alias ip_ext="curl -s monip.org | sed -n 's#.*IP : \([0-9.]*\).*#\1\n#p'"
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
