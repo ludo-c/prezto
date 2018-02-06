@@ -37,10 +37,10 @@ zstyle ':prezto:load' pmodule \
   'ssh' \
   'completion' \
   'git' \
-  'syntax-highlighting' \
-  'history-substring-search' \
   'pacman' \
   'tmux' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt'
 
 #
