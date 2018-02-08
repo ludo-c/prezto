@@ -21,6 +21,7 @@ alias cls="echo -ne '\033c'"
 alias cur_track="qdbus org.mpris.clementine /Player "org.freedesktop.MediaPlayer.GetMetadata""
 alias reboot="echo no, not here!"
 alias -g G='| grep'
+alias -g L='| less'
 alias aptitude='nocorrect aptitude' # no spelling correction on aptitude
 alias j='jobs'
 alias tee="tee -a"
