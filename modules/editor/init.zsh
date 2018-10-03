@@ -390,8 +390,6 @@ for keymap in 'emacs' 'viins'; do
 
   bindkey -M "$keymap" "$key_info[Left]" backward-char
   bindkey -M "$keymap" "$key_info[Right]" forward-char
-  bindkey -M "$keymap" "$key_info[Control]u" backward-char
-  bindkey -M "$keymap" "$key_info[Control]o" forward-char
 
   # Expand history on space.
   bindkey -M "$keymap" ' ' magic-space
@@ -415,7 +413,7 @@ for keymap in 'emacs' 'viins'; do
   bindkey -M "$keymap" "$key_info[BackTab]" reverse-menu-complete
 
   # Complete in the middle of word.
-  #bindkey -M "$keymap" "$key_info[Control]I" expand-or-complete
+  bindkey -M "$keymap" "$key_info[Control]I" expand-or-complete
 
   # Expand .... to ../..
   if zstyle -t ':prezto:module:editor' dot-expansion; then
@@ -423,8 +421,8 @@ for keymap in 'emacs' 'viins'; do
   fi
 
   # Display an indicator when completing.
-  #bindkey -M "$keymap" "$key_info[Control]I" \
-  #  expand-or-complete-with-indicator
+  bindkey -M "$keymap" "$key_info[Control]I" \
+    expand-or-complete-with-indicator
 
   # Insert 'sudo ' at the beginning of the line.
   bindkey -M "$keymap" "$key_info[Control]X$key_info[Control]S" prepend-sudo
