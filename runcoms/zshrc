@@ -18,8 +18,10 @@ alias chroot-android="echo 'sudo mount --bind /tftpboot /home/lchopin/opt/ubundr
 alias picocom0="picocom --nolock --baud 115200 /dev/ttyUSB0"
 alias picocom1="picocom --nolock --baud 115200 /dev/ttyUSB1"
 alias picocom2="picocom --nolock --baud 115200 /dev/ttyUSB2"
+alias minicom0="minicom --wrap --color=on --noinit --baudrate 115200 --device /dev/ttyUSB0"
+alias minicom1="minicom --wrap --color=on --noinit --baudrate 115200 --device /dev/ttyUSB1"
 alias cls="echo -ne '\033c'"
-alias cur_track="qdbus org.mpris.clementine /Player "org.freedesktop.MediaPlayer.GetMetadata""
+alias cur_track="qdbus org.mpris.MediaPlayer2.clementine /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get org.mpris.MediaPlayer2.Player Metadata"
 alias reboot="echo no, not here!"
 alias -g G='| grep'
 alias -g L='| less'
@@ -31,6 +33,9 @@ alias ag="ag -S" # Smart search
 alias vi="vim"
 # https://coderwall.com/p/lyrjsq/extract-your-external-ip-using-command-line-tools
 alias ip_ext="curl -s monip.org | sed -n 's#.*IP : \([0-9.]*\).*#\1\n#p'"
+alias gbp='git rev-parse --abbrev-ref HEAD'
+alias tiga="tig --all"
+alias tigs="tig status"
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
@@ -44,3 +49,15 @@ function ff() { find . -type f -iname \*${*}\* -ls ; }
 # generate a dated .bak from file
 function bak() { cp $1 $1_`date +%Y-%m-%d_%H-%M-%S`.bak ; }
 
+
+bindkey '\e[1~'   beginning-of-line  # Linux console
+bindkey '\e[H'    beginning-of-line  # xterm
+bindkey '\eOH'    beginning-of-line  # gnome-terminal
+bindkey '\e[2~'   overwrite-mode     # Linux console, xterm, gnome-terminal
+bindkey '\e[3~'   delete-char        # Linux console, xterm, gnome-terminal
+bindkey '\e[4~'   end-of-line        # Linux console
+bindkey '\e[F'    end-of-line        # xterm
+bindkey '\eOF'    end-of-line        # gnome-terminal
+
+export QT_X11_NO_MITSHM=1 # needed by kdiff3 for root user
+export GENBOX_ROOT=/home/lchopin/genbox/targets/current/root
