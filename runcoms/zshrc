@@ -10,6 +10,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source zplug
+if [[ -s ~/.zplug/init.zsh ]]; then
+  source ~/.zplug/init.zsh
+fi
+
+autoload -Uz compinit
+
 # Customize to your needs...
 #alias genbox="echo sudo /media/lchopin/hdd/genbox/bin/genbox-ng -v"
 alias genbox="echo sudo /home/lchopin/genbox/bin/genbox-ng -v"
@@ -25,6 +32,7 @@ alias cur_track="qdbus org.mpris.MediaPlayer2.clementine /org/mpris/MediaPlayer2
 alias reboot="echo no, not here!"
 alias -g G='| grep'
 alias -g L='| less'
+alias -g F='| fzf'
 alias aptitude='nocorrect aptitude' # no spelling correction on aptitude
 alias j='jobs'
 alias tee="tee -a"
@@ -36,6 +44,7 @@ alias ip_ext='curl -s monip.org | sed -n "s#.*IP : \([0-9.]*\).*#\1\n#p"'
 alias gbp='git rev-parse --abbrev-ref HEAD'
 alias tiga="tig --all"
 alias tigs="tig status"
+alias fzf="fzf --multi --reverse"
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
@@ -87,3 +96,11 @@ bindkey '\eOF'    end-of-line        # gnome-terminal
 
 export QT_X11_NO_MITSHM=1 # needed by kdiff3 for root user
 export GENBOX_ROOT=/home/lchopin/genbox/targets/current/root
+
+zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tmux,fzf}"
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
+source ~/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh
+source ~/.zplug/repos/junegunn/fzf/shell/completion.zsh
