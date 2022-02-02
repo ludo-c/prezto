@@ -15,6 +15,11 @@ if [[ -s ~/.zplug/init.zsh ]]; then
   source ~/.zplug/init.zsh
 fi
 
+# Source Wyplay variables
+if [[ -s ~/.genbox_env ]]; then
+  source ~/.genbox_env
+fi
+
 autoload -Uz compinit
 
 # Customize to your needs...
@@ -45,6 +50,7 @@ alias gbp='git rev-parse --abbrev-ref HEAD'
 alias tiga="tig --all"
 alias tigs="tig status"
 alias fzf="fzf --multi --reverse"
+alias eopen="~/bin/eclipse --launcher.openFile $PWD/"
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
@@ -104,3 +110,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 source ~/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh
 source ~/.zplug/repos/junegunn/fzf/shell/completion.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
