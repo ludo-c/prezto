@@ -24,7 +24,7 @@ autoload -Uz compinit
 
 # Customize to your needs...
 #alias genbox="echo sudo /media/lchopin/hdd/genbox/bin/genbox-ng -v"
-alias genbox="echo sudo /home/lchopin/genbox/bin/genbox-ng -v"
+alias genbox="echo sudo /home/lchopin/genbox/bin/genbox-ng -v /usr/sbin/sshd"
 alias genbox_canal="echo sudo /home/lchopin/genbox_canal/bin/genbox-ng -v"
 alias chroot-android="echo 'sudo mount --bind /tftpboot /home/lchopin/opt/ubundroid/remaster-root/tftpboot; sudo mount --bind /media/lchopin/hdd /home/lchopin/opt/ubundroid/remaster-root/media/; export HOME=/root/; sudo uck-remaster-chroot-rootfs /home/lchopin/opt/ubundroid/'"
 alias picocom0="picocom --nolock --baud 115200 /dev/ttyUSB0"
@@ -52,6 +52,7 @@ alias tigs="tig status"
 alias fzf="fzf --multi --reverse"
 alias eopen="~/bin/eclipse --launcher.openFile $PWD/"
 alias sshg="ssh  \$(basename \$(readlink ~/genbox))"
+alias pf="fzf --preview='bat --color=always {}'"
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
