@@ -53,6 +53,7 @@ alias fzf="fzf --multi --reverse"
 alias eopen="~/bin/eclipse --launcher.openFile $PWD/"
 alias sshg="ssh  \$(basename \$(readlink ~/genbox))"
 alias pf="fzf --preview='bat --color=always {}'"
+alias gcob='git branch | fzf | xargs git checkout'
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
@@ -109,7 +110,7 @@ zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tm
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-#export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
+export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 source ~/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh
 source ~/.zplug/repos/junegunn/fzf/shell/completion.zsh
 
