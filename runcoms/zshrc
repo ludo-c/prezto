@@ -46,6 +46,7 @@ alias ag="ag -S" # Smart search
 alias vi="vim"
 # https://coderwall.com/p/lyrjsq/extract-your-external-ip-using-command-line-tools
 alias ip_ext='curl -s monip.org | sed -n "s#.*IP : \([0-9.]*\).*#\1\n#p"'
+alias myip='curl -s https://api.myip.com | jq -r .ip'
 alias gbp='git rev-parse --abbrev-ref HEAD'
 alias tiga="tig --all"
 alias tigs="tig status"
