@@ -15,6 +15,10 @@ if [[ -s ~/.zplug/init.zsh ]]; then
   source ~/.zplug/init.zsh
 fi
 
+if [[ -s /usr/share/zsh/scripts/zplug/init.zsh ]]; then
+  source /usr/share/zsh/scripts/zplug/init.zsh
+fi
+
 # Source Wyplay variables
 if [[ -s ~/.genbox_env ]]; then
   source ~/.genbox_env
