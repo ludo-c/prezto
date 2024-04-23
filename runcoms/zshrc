@@ -55,6 +55,8 @@ alias eopen="~/bin/eclipse --launcher.openFile $PWD/"
 alias sshg="ssh  \$(basename \$(readlink ~/genbox))"
 alias pf="fzf --preview='bat --color=always {}'"
 alias gcob='git branch | fzf | xargs git checkout'
+alias diff='diff --color=auto'
+alias ip='ip -color=auto'
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
