@@ -31,9 +31,9 @@ autoload -Uz compinit
 alias genbox="echo sudo /home/lchopin/genbox/bin/genbox-ng -v /usr/sbin/sshd"
 alias genbox_canal="echo sudo /home/lchopin/genbox_canal/bin/genbox-ng -v"
 alias chroot-android="echo 'sudo mount --bind /tftpboot /home/lchopin/opt/ubundroid/remaster-root/tftpboot; sudo mount --bind /media/lchopin/hdd /home/lchopin/opt/ubundroid/remaster-root/media/; export HOME=/root/; sudo uck-remaster-chroot-rootfs /home/lchopin/opt/ubundroid/'"
-alias picocom0="picocom --nolock --baud 115200 /dev/ttyUSB0"
-alias picocom1="picocom --nolock --baud 115200 /dev/ttyUSB1"
-alias picocom2="picocom --nolock --baud 115200 /dev/ttyUSB2"
+alias picocom0="picocom --nolock --databits 8 --baud 115200 /dev/ttyUSB0"
+alias picocom1="picocom --nolock --databits 8 --baud 115200 /dev/ttyUSB1"
+alias picocom2="picocom --nolock --databits 8 --baud 115200 /dev/ttyUSB2"
 alias minicom0="minicom --wrap --color=on --noinit --baudrate 115200 --device /dev/ttyUSB0"
 alias minicom1="minicom --wrap --color=on --noinit --baudrate 115200 --device /dev/ttyUSB1"
 alias cls="echo -ne '\033c'"
@@ -61,6 +61,7 @@ alias pf="fzf --preview='bat --color=always {}'"
 alias gcob='git branch | fzf | xargs git checkout'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
+alias qrr='scrot --select --overwrite /dev/stdout | zbarimg /dev/stdin'
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
