@@ -62,6 +62,7 @@ alias gcob='git branch | fzf | xargs git checkout'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
 alias qrr='scrot --select --overwrite /dev/stdout | zbarimg /dev/stdin'
+alias qrrp='scrot --select --overwrite /dev/stdout | zbarimg /dev/stdin | sed "s/QR-Code://" | xclip -r'
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
