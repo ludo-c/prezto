@@ -68,6 +68,7 @@ alias ip='ip -color=auto'
 alias qrr='scrot --select --overwrite /dev/stdout | zbarimg /dev/stdin'
 alias qrrp='scrot --select --overwrite /dev/stdout | zbarimg /dev/stdin | sed "s/QR-Code://" | xclip -r'
 alias ocr='scrot --select --overwrite /dev/stdout | tesseract stdin stdout'
+alias hexedit='hexedit -l 16'
 
 # 10 second wait if you do something that will delete everything. I wish I'd had this before...
 setopt RM_STAR_WAIT
@@ -130,3 +131,19 @@ source ~/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh
 source ~/.zplug/repos/junegunn/fzf/shell/completion.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/home/lchopin/.bun/_bun" ] && source "/home/lchopin/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/lchopin/.lmstudio/bin"
+# End of LM Studio CLI section
+
